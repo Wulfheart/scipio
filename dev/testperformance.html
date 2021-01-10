@@ -1,4 +1,15 @@
-window.classical =  `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./classical.js"></script>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Test</title>
+</head>
+<body>
+  <div id="map" class="h-screen p-5">
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg
        xmlns:dc="http://purl.org/dc/elements/1.1/"
        xmlns:cc="http://creativecommons.org/ns#"
@@ -2666,7 +2677,20 @@ window.classical =  `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
          inkscape:label="orders"
          style="display:inline" />
     </svg>
-    `
+    
 
 
    
+  </div>
+ 
+  <script>
+    document.getElementById('map').innerHTML = window.classical;
+    var svg = document.querySelector('#map>svg');
+    var provinces = svg.querySelector('g#provinces');
+    console.log(provinces.style.display)
+    
+    
+  </script>
+  <!-- <script src="./js/out.js"></script> -->
+</body>
+</html>

@@ -1,4 +1,4 @@
-var payload =  `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+window.classical =  `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg
        xmlns:dc="http://purl.org/dc/elements/1.1/"
        xmlns:cc="http://creativecommons.org/ns#"
@@ -2669,4 +2669,4 @@ var payload =  `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     `
 
 
-    export default payload;
+   
