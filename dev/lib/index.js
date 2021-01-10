@@ -16,6 +16,9 @@
         child.style.display = "none";
       }
       provinces.style.display = "inline";
+      var positions = this._map.querySelector("g#unit-positions");
+      console.log(positions);
+      positions.style.display = "none";
     }
     colorProvince(province, color) {
       var svg = this._map.querySelector(`g#provinces>#${province}`);
@@ -93,17 +96,10 @@
       return this;
     }
     getProvinceReferencePoint(province) {
-      var t2 = this._map.querySelector(`#${province}Center`);
-      var reset = false;
-      var prev = t2.style;
-      t2.style.fill = "#8f8f8f";
+      var t2 = this._map.querySelector(`g.unit-positions>rect#${province}Position`);
+      console.log(t2.attributes.getNamedItem("x"));
       var x;
       var y;
-      window.console.log(t2);
-      var bb = t2.getBBox();
-      window.console.log(province, bb);
-      x = bb.x - 5;
-      y = bb.y - 5;
       return {x, y};
     }
   };

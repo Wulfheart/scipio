@@ -27,8 +27,9 @@ export class Map {
         }
         provinces.style.display = 'inline';
 
-        // Add shadow
-        
+        var positions = this._map.querySelector('g#unit-positions') as SVGElement;
+        console.log(positions)
+        positions.style.display = 'none'
     }
 
     public colorProvince(province: string, color: string): Map {
@@ -112,12 +113,8 @@ export class Map {
     }
 
     public getProvinceReferencePoint(province: string): { x: number, y: number } {
-        var t = this._map.querySelector(`#${province}Center`) as SVGPathElement;
-        var reset : boolean = false;
-        var prev = t.style;
-        // t.style.display = "inline";
-        t.style.fill = "#8f8f8f";
-        // t.style.opacity = "1";
+        var t = this._map.querySelector(`g.unit-positions>rect#${province}Position`) as SVGRectElement;
+        console.log(t.attributes.getNamedItem('x'))
         var x: number;
         var y: number;
         // if(t.nodeName == "path"){
@@ -135,14 +132,7 @@ export class Map {
         //         moveSet = parts[i].toString().toLowerCase() == "m";
         //     }
         // }
-        window.console.log(t)
-        var bb = t.getBBox();
-        window.console.log(province, bb)
-        x = bb.x - 5;
-        y = bb.y - 5;
-        // t.style.display = prev.display;
-        // t.style.fill = prev.fill;
-        // t.style.opacity = prev.opacity;
+        
         return {x: x, y: y};
     }
 

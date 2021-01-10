@@ -1,5 +1,3 @@
-
-window.classical = `
 <!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><html><head></head><body><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 1524 1357" version="1.1" id="svg10" sodipodi:docname="classical.svg" inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata id="metadata16">
     <rdf:rdf>
@@ -448,4 +446,3 @@ window.classical = `
   <g inkscape:groupmode="layer" id="orders" inkscape:label="orders" style="display:inline"></g>
 </svg>
 </body></html>
-`
