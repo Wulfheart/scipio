@@ -54,10 +54,9 @@
       newElem.innerHTML = unit;
       units.appendChild(newElem);
       window.console.log(newElem.getBBox());
-      var factor = this._max / newElem.getBBox().width;
-      window.console.log(factor);
-      newElem.setAttribute("transform", `translate(${point.x},${point.y}) scale(${factor})`);
-      newElem.setAttribute("width", this._max.toString());
+      newElem.setAttribute("width", "39");
+      newElem.setAttribute("height", "20");
+      newElem.setAttribute("transform", `translate(${point.x},${point.y})`);
       newElem.style.display = "inline";
       window.console.log(units);
       return this;
@@ -87,19 +86,22 @@
       newElem.innerHTML = unit;
       units.appendChild(newElem);
       window.console.log(newElem.getBBox());
-      var factor = this._max / newElem.getBBox().width;
       window.console.log(province, point);
-      newElem.setAttribute("transform", `translate(${point.x},${point.y}) scale(${factor})`);
-      newElem.setAttribute("width", this._max.toString());
+      newElem.setAttribute("width", "53.8px");
+      newElem.setAttribute("height", "15px");
+      newElem.setAttribute("transform", `translate(${point.x},${point.y})`);
       newElem.style.display = "inline";
       window.console.log(units);
       return this;
     }
     getProvinceReferencePoint(province) {
-      var t2 = this._map.querySelector(`g.unit-positions>rect#${province}Position`);
+      console.log(province);
+      var t2 = this._map.querySelector(`g#unit-positions>rect#${province}Position`);
       console.log(t2.attributes.getNamedItem("x"));
       var x;
       var y;
+      x = t2.x.baseVal.value;
+      y = t2.y.baseVal.value;
       return {x, y};
     }
   };

@@ -68,10 +68,13 @@ export class Map {
         newElem.innerHTML = unit;
         units.appendChild(newElem)
         window.console.log(newElem.getBBox())
-        var factor = this._max / newElem.getBBox().width
-        window.console.log(factor)
-        newElem.setAttribute('transform', `translate(${point.x},${point.y}) scale(${factor})`)
-        newElem.setAttribute('width', this._max.toString());
+        // var factor = this._max / newElem.getBBox().width
+        // var factor = 39/1523
+        // window.console.log(factor) 
+        newElem.setAttribute('width', '39');
+        newElem.setAttribute('height', '20');
+        // newElem.setAttribute('transform', `translate(${point.x},${point.y}) scale(${factor})`)
+        newElem.setAttribute('transform', `translate(${point.x},${point.y})`)
         newElem.style.display = "inline"
         window.console.log(units)
         return this;
@@ -103,20 +106,30 @@ export class Map {
         newElem.innerHTML = unit;
         units.appendChild(newElem)
         window.console.log(newElem.getBBox())
-        var factor = this._max / newElem.getBBox().width
+        // var factor = this._max / newElem.getBBox().width
         window.console.log(province, point)
-        newElem.setAttribute('transform', `translate(${point.x},${point.y}) scale(${factor})`)
-        newElem.setAttribute('width', this._max.toString());
+        newElem.setAttribute('width', '53.8px');
+        newElem.setAttribute('height', '15px');
+        // newElem.setAttribute('transform', `translate(${point.x},${point.y}) scale(${factor})`)
+        newElem.setAttribute('transform', `translate(${point.x},${point.y})`)
         newElem.style.display = "inline"
         window.console.log(units)
         return this;
     }
 
     public getProvinceReferencePoint(province: string): { x: number, y: number } {
-        var t = this._map.querySelector(`g.unit-positions>rect#${province}Position`) as SVGRectElement;
+        console.log(province)
+        // var t = this._map.querySelector(`g.province-centers>#${province}Center`) as SVGRectElement;
+        var t = this._map.querySelector(`g#unit-positions>rect#${province}Position`) as SVGRectElement;
+        // console.log(t)
+        
         console.log(t.attributes.getNamedItem('x'))
         var x: number;
         var y: number;
+        x = t.x.baseVal.value;
+        y = t.y.baseVal.value;
+
+        // x = t.attributes.getNamedItem('x')<Number></Number>
         // if(t.nodeName == "path"){
         //     var d :string = t.attributes["d"].nodeValue;
             
